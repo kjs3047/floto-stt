@@ -1,0 +1,29 @@
+# Gradle / Android build output
+.gradle/
+build/
+app/build/
+app/.cxx/
+.cxx/
+.externalNativeBuild/
+
+# Local machine configuration
+local.properties
+*.iml
+
+# Secrets / signing material
+*.jks
+*.keystore
+*.p12
+*.pem
+
+# Local model files and generated packages
+*.bin
+*.gguf
+*.apk
+!dist/Floto-install-debug.apk
+dist/*.zip
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+*.log

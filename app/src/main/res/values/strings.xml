@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Floto</string>
+    <string name="accessibility_service_label">Floto text insertion</string>
+    <string name="accessibility_service_description">Allows Floto to insert recognized speech into the focused text field.</string>
+</resources>
