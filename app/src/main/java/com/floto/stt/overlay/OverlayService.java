@@ -98,8 +98,13 @@ public class OverlayService extends Service {
                 PixelFormat.TRANSLUCENT
         );
         overlayParams.gravity = Gravity.TOP | Gravity.START;
-        overlayParams.x = AppSettings.getOverlayX(this);
-        overlayParams.y = AppSettings.getOverlayY(this);
+        int savedX = AppSettings.getOverlayX(this);
+        int savedY = AppSettings.getOverlayY(this);
+        overlayParams.x = clampOverlayX(savedX);
+        overlayParams.y = clampOverlayY(savedY);
+        if (overlayParams.x != savedX || overlayParams.y != savedY) {
+            AppSettings.setOverlayPosition(this, overlayParams.x, overlayParams.y);
+        }
 
         mainButton = bubble("STT", 0xff147c72, 18, true);
         FrameLayout.LayoutParams mainParams = new FrameLayout.LayoutParams(Ui.dp(this, 64), Ui.dp(this, 64));
@@ -180,13 +185,17 @@ public class OverlayService extends Service {
 
     private int clampOverlayX(int x) {
         int width = getResources().getDisplayMetrics().widthPixels;
-        int overlayWidth = overlayView == null ? Ui.dp(this, 92) : overlayView.getWidth();
+        int overlayWidth = overlayView == null || overlayView.getWidth() <= 0
+                ? Ui.dp(this, 92)
+                : overlayView.getWidth();
         return Math.max(0, Math.min(x, Math.max(0, width - overlayWidth)));
     }
 
     private int clampOverlayY(int y) {
         int height = getResources().getDisplayMetrics().heightPixels;
-        int overlayHeight = overlayView == null ? Ui.dp(this, 92) : overlayView.getHeight();
+        int overlayHeight = overlayView == null || overlayView.getHeight() <= 0
+                ? Ui.dp(this, 92)
+                : overlayView.getHeight();
         return Math.max(0, Math.min(y, Math.max(0, height - overlayHeight)));
     }
 
