@@ -96,3 +96,4 @@ The prototype stores the OpenAI API key in app SharedPreferences. That is accept
 - Only `arm64-v8a` and `x86_64` ABIs are built. Galaxy S26 Ultra uses `arm64-v8a`; `x86_64` is included for emulator testing.
 <!-- Orca automation test: Linear issue → PR -->
 <!-- Orca automation test: Linear issue → PR #2 -->
+<!-- Orca automation test: Linear issue → PR #3 -->
