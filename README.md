@@ -98,3 +98,4 @@ The prototype stores the OpenAI API key in app SharedPreferences. That is accept
 <!-- Orca automation test: Linear issue → PR #2 -->
 <!-- Orca automation test: Linear issue → PR #3 -->
 <!-- Orca automation test: Linear issue → PR #4 -->
+<!-- Orca automation test: Linear issue → PR #9 -->
