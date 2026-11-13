@@ -94,4 +94,10 @@ The prototype stores the OpenAI API key in app SharedPreferences. That is accept
 - Text insertion depends on the target app exposing an editable accessibility node.
 - Local Whisper.cpp loads the selected model on first use and runs on CPU in this prototype, so it can be too slow for practical dictation.
 - Only `arm64-v8a` and `x86_64` ABIs are built. Galaxy S26 Ultra uses `arm64-v8a`; `x86_64` is included for emulator testing.
+<!-- Orca automation test: Linear issue → PR -->
+<!-- Orca automation test: Linear issue → PR #2 -->
+<!-- Orca automation test: Linear issue → PR #3 -->
+<!-- Orca automation test: Linear issue → PR #4 -->
+<!-- Orca automation test: Linear issue → PR #9 -->
+<!-- Orca automation test: Linear issue → PR #21 -->
 <!-- Orca automation test: Linear issue → PR #20 -->
