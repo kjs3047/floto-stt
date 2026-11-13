@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Microphone and transcript lines stay inside the adaptive icon safe zone. -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M42,31 C37.58,31 34,34.58 34,39 L34,51 C34,55.42 37.58,59 42,59 C46.42,59 50,55.42 50,51 L50,39 C50,34.58 46.42,31 42,31 Z" />
+    <path
+        android:fillColor="@android:color/transparent"
+        android:pathData="M29,49 L29,51 C29,58.18 34.82,64 42,64 C49.18,64 55,58.18 55,51 L55,49 M42,64 L42,74 M35,74 L49,74"
+        android:strokeColor="#FFFFFF"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:strokeWidth="4" />
+    <path
+        android:fillColor="@android:color/transparent"
+        android:pathData="M63,42 L77,42 M63,51 L77,51 M63,60 L71,60"
+        android:strokeColor="#D2FFF1"
+        android:strokeLineCap="round"
+        android:strokeWidth="4" />
+</vector>

@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.graphics.Color;
+import android.graphics.Insets;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -15,6 +16,7 @@ import android.provider.Settings;
 import android.text.InputType;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowInsets;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -69,6 +71,17 @@ public class SettingsActivity extends Activity {
 
     private void buildUi() {
         ScrollView scrollView = new ScrollView(this);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            scrollView.setOnApplyWindowInsetsListener((view, insets) -> {
+                // Keep the scrollable viewport clear of system bars in edge-to-edge mode.
+                Insets safeArea = insets.getInsets(
+                        WindowInsets.Type.systemBars() | WindowInsets.Type.displayCutout());
+                view.setPadding(safeArea.left, safeArea.top, safeArea.right, safeArea.bottom);
+                return insets;
+            });
+        } else {
+            scrollView.setFitsSystemWindows(true);
+        }
         LinearLayout root = new LinearLayout(this);
         root.setOrientation(LinearLayout.VERTICAL);
         root.setPadding(Ui.dp(this, 20), Ui.dp(this, 18), Ui.dp(this, 20), Ui.dp(this, 24));
@@ -233,6 +246,7 @@ public class SettingsActivity extends Activity {
         root.addView(startButton);
 
         setContentView(scrollView);
+        scrollView.requestApplyInsets();
         updatePermissionStatus();
     }
 
